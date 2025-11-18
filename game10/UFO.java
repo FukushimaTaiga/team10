@@ -29,11 +29,11 @@ public class UFO extends Actor
             move(4);
         } 
         
-        Actor asteroid = getOneIntersectingObject(asteroid.class );
+        /*Actor asteroid = getOneIntersectingObject(asteroid.class );
        
         if( asteroid != null ){
           getWorld().showText( "GAME OVER", 400, 200 );
           Greenfoot.stop();
-        }
+        }*/
     }    
 }

@@ -1,42 +1,12 @@
 #Greenfoot project file
-<<<<<<< HEAD
 class.myWorld.image=istockphoto-1403514917-612x612.jpg
-=======
-<<<<<<< HEAD
-class.UFO.image=ufo.png
-class.rocket.image=rocket.png
-editor.fx.0.height=1047
-editor.fx.0.width=974
-editor.fx.0.x=953
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
 editor.fx.0.y=0
-height=1047
-package.numDependencies=0
-package.numTargets=3
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-class.A.image=button-green.png
-=======
-class.rocket.image=rocket.png
->>>>>>> 79ee0312a761185118967b738d528c1f9d0dabd2
->>>>>>> 2cf9207d38ff5b9950f641f5b0842f0d11f0a801
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=552
-editor.fx.0.y=100
 height=1056
 package.numDependencies=0
 package.numTargets=1
-<<<<<<< HEAD
-=======
->>>>>>> 3673d87a116546f6aad80296e07be9af945d58c4
-=======
-height=585
-package.numDependencies=0
-package.numTargets=2
->>>>>>> 79ee0312a761185118967b738d528c1f9d0dabd2
->>>>>>> 402074bbae4b8d2f771cbd44f2e16c0e86afb416
->>>>>>> 2cf9207d38ff5b9950f641f5b0842f0d11f0a801
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -58,57 +28,8 @@ target1.type=ClassTarget
 target1.width=80
 target1.x=0
 target1.y=0
-<<<<<<< HEAD
 version=3.0.0
 width=1936
 world.lastInstantiated=myWorld
 xPosition=0
 yPosition=0
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 79ee0312a761185118967b738d528c1f9d0dabd2
-target2.height=50
-target2.name=MyWorld
-target2.showInterface=false
-target2.type=ClassTarget
-target2.width=80
-target2.x=0
-target2.y=0
-<<<<<<< HEAD
-target3.height=50
-target3.name=UFO
-target3.showInterface=false
-target3.type=ClassTarget
-target3.width=80
-target3.x=0
-target3.y=0
-=======
-<<<<<<< HEAD
-version=3.0.0
-width=825
-world.lastInstantiated=MyWorld
-xPosition=175
-yPosition=268
-=======
-version=3.0.0
-width=825
-world.lastInstantiated=MyWorld
-xPosition=979
-yPosition=267
->>>>>>> 3673d87a116546f6aad80296e07be9af945d58c4
-=======
->>>>>>> 402074bbae4b8d2f771cbd44f2e16c0e86afb416
-version=3.0.0
-width=974
-world.lastInstantiated=MyWorld
-<<<<<<< HEAD
-xPosition=0
-yPosition=0
-=======
-xPosition=59
-yPosition=196
->>>>>>> 79ee0312a761185118967b738d528c1f9d0dabd2
->>>>>>> 402074bbae4b8d2f771cbd44f2e16c0e86afb416
->>>>>>> 2cf9207d38ff5b9950f641f5b0842f0d11f0a801
