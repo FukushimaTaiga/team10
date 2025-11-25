@@ -1,23 +1,12 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class myWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class myWorld extends World
-{
+import greenfoot.*;  // World, Actor, GreenfootImage, Greenfoot
 
-    /**
-     * Constructor for objects of class myWorld.
-     * 
-     */
-    public myWorld()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+public class MyWorld extends World {
+
+    public MyWorld() {    
+        // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1); 
-        addObject(new UFO(),0,0);
+        addObject(new UFO(), getWidth()/2, getHeight()/2);
     }
-   
 }
+
