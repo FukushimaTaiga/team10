@@ -11,7 +11,7 @@ public class asteroid extends Actor
     public asteroid() {
         // Scale image once (adjust to taste)
         GreenfootImage img = getImage();
-        img.scale(img.getWidth() / 8, img.getHeight() / 8); // 50% size
+        img.scale(img.getWidth() / 2, img.getHeight() / 2); // 50% size
         setImage(img);
     }
     
