@@ -7,7 +7,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class asteroid extends Actor
-{
+{   
+    public asteroid() {
+        // Scale image once (adjust to taste)
+        GreenfootImage img = getImage();
+        img.scale(img.getWidth() / 2, img.getHeight() / 2); // 50% size
+        setImage(img);
+    }
+    
     public void act() 
     {
         int A = 0;
