@@ -1,20 +1,23 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class asteroid here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class asteroid extends Actor
 {
-    public void act() 
-    {
-        int A = 0;
-        int B = 359;
-        int C = A + (int)(Math.random()*((B-A)+1));
-        setRotation(C);
-        move(5);
-        
-    }    
+   private int rotationSpeed;  // 回転速度
+   public asteroid()
+   {
+       // -10〜10の中でランダムに回転速度を決める
+       rotationSpeed = Greenfoot.getRandomNumber(21) - 10;
+   }
+   public void act()
+   {
+       // 回転
+       turn(rotationSpeed);
+       // 左へ移動
+       setRotation(180);
+       move(3);
+       // 画面外に出たら削除
+       if (getX() <= 0) {
+           getWorld().removeObject(this);
+       }
+   }
 }
