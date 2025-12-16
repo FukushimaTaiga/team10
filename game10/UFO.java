@@ -1,6 +1,8 @@
 import greenfoot.*;
 
+
 public class UFO extends Actor {
+
     private double x, y;
     private double vx = 0, vy = 0;
 
@@ -18,14 +20,18 @@ public class UFO extends Actor {
     private GreenfootImage cooldownImg;
 
     public UFO() {
-        normalImg = getImage();
-        normalImg.scale(normalImg.getWidth() / 8, normalImg.getHeight() / 8);
+        
+        normalImg   = new GreenfootImage("ufo.png");
+        cooldownImg = new GreenfootImage("ufo_red.png");
 
-        cooldownImg = new GreenfootImage(normalImg);
-        cooldownImg.setColor(Color.RED);
-        cooldownImg.drawRect(0, 0, cooldownImg.getWidth()-1, cooldownImg.getHeight()-1);
+       
+        int scaledW = normalImg.getWidth() / 8;
+        int scaledH = normalImg.getHeight() / 8;
+        normalImg.scale(scaledW, scaledH);
+        cooldownImg.scale(scaledW, scaledH);
 
         setImage(normalImg);
+
     }
 
     @Override

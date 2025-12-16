@@ -2,4 +2,12 @@
 comment0.target=MyWorld
 comment1.params=
 comment1.target=MyWorld()
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ scrollBackground()
+comment3.text=Move\ the\ background\ image\ left\ and\ redraw\ it\ tiled\ across\ the\ world.
+comment4.params=
+comment4.target=void\ drawScrollingBackground()
+comment4.text=Draw\ the\ background\ so\ it\ scrolls\ seamlessly.
+numComments=5
