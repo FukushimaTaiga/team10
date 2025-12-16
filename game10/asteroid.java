@@ -24,7 +24,7 @@ public class asteroid extends Actor {
         int nextX = getX() - driftSpeed;
 
         // 端に触れたら消す（クランプされても発火する）
-        if (nextX <= 0 || isAtEdge()) {
+        if (nextX <= 0 ) {
             World w = getWorld();
             if (w != null) {
                 w.removeObject(this);
