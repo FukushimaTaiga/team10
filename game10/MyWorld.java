@@ -3,6 +3,7 @@ public class MyWorld extends World {
    private GreenfootImage bgImage;  // original background image
    private int bgX = 0;             // scroll position
    private int scrollSpeed = 2;     // pixels per frame (adjust to taste)
+    private GreenfootSound backgroundMusic = new GreenfootSound("backsound.mp3");
    public MyWorld() {
        // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
        super(1200, 800, 1);
@@ -24,6 +25,9 @@ public class MyWorld extends World {
    }
    public void act() {
        scrollBackground();
+        if (!backgroundMusic.isPlaying()) {
+            backgroundMusic.playLoop(); // Play the music in a loop
+        }
    }
    /** Move the background image left and redraw it tiled across the world. */
    private void scrollBackground() {
