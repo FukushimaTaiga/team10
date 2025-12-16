@@ -1,7 +1,9 @@
 
 import greenfoot.*;  // World, Actor, GreenfootImage, Greenfoot
 
-public class UFO extends Actor {
+public class UFO extends 
+Actor
+ {
     // Precise positions and velocities (double for smooth movement)
     private double x, y;
     private double vx = 0.0, vy = 0.0;
