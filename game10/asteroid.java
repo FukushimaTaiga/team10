@@ -1,27 +1,38 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class asteroid here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class asteroid extends Actor
-{   
+public class asteroid extends Actor {   
+    private int rotationSpeed;   // 1フレームあたりの回転量（度）
+    private int driftSpeed = 3;  // 左方向への移動速度（ピクセル）
+
     public asteroid() {
-        // Scale image once (adjust to taste)
+        // -10〜+10 の範囲で回転速度をランダムに決定（0もあり）
+        rotationSpeed = Greenfoot.getRandomNumber(21) - 10;
+
+        // 画像を一度だけ縮小（50%）
         GreenfootImage img = getImage();
-        img.scale(img.getWidth() / 2, img.getHeight() / 2); // 50% size
-        setImage(img);
-    }
+        if (img != null) {
+            img.scale(img.getWidth() / 2, img.getHeight() / 2);
+            setImage(img);
+        }
+    } 
     
-    public void act() 
-    {
-        int A = 0;
-        int B = 359;
-        int C = A + (int)(Math.random()*((B-A)+1));
-        setRotation(C);
-        move(5);
-        
-    }    
+    public void act() {
+        turn(rotationSpeed);
+
+        // 左へ移動
+        int nextX = getX() - driftSpeed;
+
+        // 端に触れたら消す（クランプされても発火する）
+        if (nextX <= 0 || isAtEdge()) {
+            World w = getWorld();
+            if (w != null) {
+                w.removeObject(this);
+            }
+            return;
+        }
+
+    setLocation(nextX, getY());
+}
+
 }
