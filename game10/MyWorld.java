@@ -1,33 +1,10 @@
 import greenfoot.*;  // World, Actor, GreenfootImage, Greenfoot
 public class MyWorld extends World {
-<<<<<<< HEAD
-
-    public MyWorld() {    
-        // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
-        super(1200, 800, 1); 
-
-        addObject(new UFO(), getWidth()/2, getHeight()/2);
-        
-        for(int i = 0; i < 5; i++)
-        {
-            int A = 0;
-            int B = 1200;
-            int x = A + (int)(Math.random()*((B-A)+1));
-        
-            int C = 0;
-            int D = 800;
-            int y = A + (int)(Math.random()*((D-A)+1));
-            addObject(new asteroid(), x, y);
-        }
-
-    }
-    
-}
-
-=======
    private GreenfootImage bgImage;  // original background image
    private int bgX = 0;             // scroll position
    private int scrollSpeed = 2;     // pixels per frame (adjust to taste)
+   // ===== Distance Score (Option A) =====
+   private long distancePx = 0;     // distance traveled in pixels
    public MyWorld() {
        // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
        super(1200, 800, 1);
@@ -46,9 +23,19 @@ public class MyWorld extends World {
            int y = C + (int)(Math.random() * ((D - C) + 1));  // fixed from A→C
            addObject(new asteroid(), x, y);
        }
+       // Show initial score
+       updateDistanceText();
    }
    public void act() {
        scrollBackground();
+       // ===== Option A: distance increases as the world scrolls =====
+       distancePx += scrollSpeed;
+       updateDistanceText();
+   }
+   private void updateDistanceText() {
+       // Convert pixels → meters (example: 10 px = 1 m)
+       long meters = distancePx / 10;
+       showText("Distance: " + meters + " m", 110, 30);
    }
    /** Move the background image left and redraw it tiled across the world. */
    private void scrollBackground() {
@@ -73,4 +60,9 @@ public class MyWorld extends World {
        }
    }
 }
->>>>>>> 210a5f73fff4bb414f74d4b631c4adc8cb650f77
+
+    
+    
+
+
+   
