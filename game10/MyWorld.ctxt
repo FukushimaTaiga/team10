@@ -14,4 +14,6 @@ comment5.text=Move\ the\ background\ image\ left\ and\ redraw\ it\ tiled\ across
 comment6.params=
 comment6.target=void\ drawScrollingBackground()
 comment6.text=Draw\ the\ background\ so\ it\ scrolls\ seamlessly.
-numComments=7
+comment7.params=
+comment7.target=void\ spawnRandomAsteroids()
+numComments=8
