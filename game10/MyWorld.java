@@ -13,10 +13,10 @@ public class MyWorld extends World {
        bgImage = new GreenfootImage("istockphoto-1403514917-612x612 (1).jpg");
        drawScrollingBackground();
        // ====== OBJECTS SETUP ======
-       addObject(new UFO(), getWidth() / 2, getHeight() / 2);
+       addObject(new UFO(), 150, getHeight() / 2);
        for (int i = 0; i < 5; i++) {
-           int A = 0;
-           int B = 1200;
+           int A = getWidth();
+           int B = getWidth() + 300;
            int x = A + (int)(Math.random() * ((B - A) + 1));
            int C = 0;
            int D = 800;
