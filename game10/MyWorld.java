@@ -8,11 +8,6 @@ public class MyWorld extends World {
    // ===== Game Over Flag =====
    private boolean isGameOver = false;
    
-   private int spawnTick = 0;           // 経過フレーム
-   private int spawnInterval = 20;      // スポーン間隔（フレーム）
-   private int baseMaxPerTick = 3;      // 通常スポーン時の最大数（0〜3の範囲で出す）
-   private int burstChancePercent = 8;  // バースト（まとめて大量）発生確率（%）
-
    public MyWorld() {
        super(1200, 800, 1);
        // ====== BACKGROUND SETUP ======
@@ -38,16 +33,7 @@ public class MyWorld extends World {
        distancePx += scrollSpeed;
        updateDistanceText();
        
-       // ====== 永遠スポーン（右から左へ） ======
-       spawnTick++;
-       if (spawnTick % spawnInterval == 0) {
-           spawnRandomAsteroids();
-
-           // 難易度を少しずつ上げる例（間隔を縮める。最小8フレーム）
-           if (spawnTick % (60 * 10) == 0 && spawnInterval > 8) { // 10秒ごと
-               spawnInterval--;
-           }
-       }
+       
 
    }
    private void updateDistanceText() {
@@ -84,33 +70,4 @@ public class MyWorld extends World {
            x += imgW;
        }
    }
-   private void spawnRandomAsteroids() {
-   // 通常は 0〜baseMaxPerTick の個数でスポーン
-       int count = Greenfoot.getRandomNumber(baseMaxPerTick + 1); // 0,1,2,3
-
-       // ときどきバースト（まとめて 5〜8 個）
-       if (Greenfoot.getRandomNumber(100) < burstChancePercent) {
-           count = 5 + Greenfoot.getRandomNumber(4); // 5,6,7,8
-       }
-
-       for (int i = 0; i < count; i++) {
-           asteroid a = new asteroid();
-
-           // 右端のさらに外から出すと自然に流れ込む
-           int spawnX = getWidth() + 40;
-
-           // Y は上下に少し余白を持たせてランダム
-           int margin = 20;
-           int spawnY = margin + Greenfoot.getRandomNumber(getHeight() - margin * 2);
-
-           addObject(a, spawnX, spawnY);
-       }
-   }
-
 }
-
-    
-    
-
-
-   
