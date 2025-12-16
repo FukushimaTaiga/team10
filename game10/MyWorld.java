@@ -7,6 +7,7 @@ public class MyWorld extends World {
    private long distancePx = 0;     // distance traveled in pixels
    // ===== Game Over Flag =====
    private boolean isGameOver = false;
+   
    public MyWorld() {
        super(1200, 800, 1);
        // ====== BACKGROUND SETUP ======
@@ -31,6 +32,9 @@ public class MyWorld extends World {
        // Option A: distance increases as the world scrolls
        distancePx += scrollSpeed;
        updateDistanceText();
+       
+       
+
    }
    private void updateDistanceText() {
        long meters = distancePx / 10; // 10 px = 1 m (adjust if you want)
