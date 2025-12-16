@@ -22,26 +22,14 @@ public class asteroid extends Actor {
         World w = getWorld();
         if (w == null) return;
 
-        // 次の位置
-        int nextX = getX() - driftSpeed;
-        int y = getY();
 
-        // 画像の半幅・半高
-        GreenfootImage img = getImage();
-        int halfW = (img != null) ? img.getWidth() / 2 : 0;
-        int halfH = (img != null) ? img.getHeight() / 2 : 0;
+        // 端に触れたら消す（クランプされても発火する）
+        if (nextX <= 0 ) {
+            World w = getWorld();
+            if (w != null) {
+                w.removeObject(this);
+            }
 
-        int worldW = w.getWidth();
-        int worldH = w.getHeight();
-
-        // 画面外判定（完全に外へ出たときのみ）
-        boolean offLeft   = nextX < -halfW;
-        boolean offRight  = nextX > worldW + halfW;
-        boolean offTop    = y < -halfH;
-        boolean offBottom = y > worldH + halfH;
-
-        if (offLeft || offRight || offTop || offBottom) {
-            w.removeObject(this);
             return;
         }
 
