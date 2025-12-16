@@ -1,6 +1,8 @@
 import greenfoot.*;
 
+
 public class UFO extends Actor {
+
     private double x, y;
     private double vx = 0, vy = 0;
 
