@@ -25,6 +25,7 @@ public class MyWorld extends World {
            addObject(new asteroid(), x, y);
        }
        updateDistanceText();
+       addAsteroid();
    }
    public void act() {
        if (isGameOver) return;
@@ -70,4 +71,18 @@ public class MyWorld extends World {
            x += imgW;
        }
    }
+   private void addAsteroid() {
+        asteroid a = new asteroid();
+        int worldW = getWidth();
+        int worldH = getHeight();
+
+        // 画像の半幅（右外から入場するために使用）
+        GreenfootImage img = a.getImage();
+        int halfW = (img != null) ? img.getWidth() / 2 : 0;
+
+        int y = Greenfoot.getRandomNumber(worldH); // 適当な縦位置
+        int startX = worldW + halfW;               // 右の外から入場
+        addObject(a, startX, y);
+    }
+
 }
