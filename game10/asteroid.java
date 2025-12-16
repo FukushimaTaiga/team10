@@ -6,10 +6,8 @@ public class asteroid extends Actor {
     private int driftSpeed = 3;  // 左方向への移動速度（ピクセル）
 
     public asteroid() {
-        // -10〜+10 の範囲で回転速度をランダムに決定（0もあり）
         rotationSpeed = Greenfoot.getRandomNumber(21) - 10;
 
-        // 画像を一度だけ縮小（50%）
         GreenfootImage img = getImage();
         if (img != null) {
             img.scale(img.getWidth() / 2, img.getHeight() / 2);
@@ -18,21 +16,48 @@ public class asteroid extends Actor {
     } 
     
     public void act() {
+        // 回転
         turn(rotationSpeed);
 
-        // 左へ移動
-        int nextX = getX() - driftSpeed;
+        World w = getWorld();
+        if (w == null) return;
 
-        // 端に触れたら消す（クランプされても発火する）
-        if (nextX <= 0 || isAtEdge()) {
-            World w = getWorld();
-            if (w != null) {
-                w.removeObject(this);
-            }
+        // 次の位置
+        int nextX = getX() - driftSpeed;
+        int y = getY();
+
+        // 画像の半幅・半高
+        GreenfootImage img = getImage();
+        int halfW = (img != null) ? img.getWidth() / 2 : 0;
+        int halfH = (img != null) ? img.getHeight() / 2 : 0;
+
+        int worldW = w.getWidth();
+        int worldH = w.getHeight();
+
+        // 画面外判定（完全に外へ出たときのみ）
+        boolean offLeft   = nextX < -halfW;
+        boolean offRight  = nextX > worldW + halfW;
+        boolean offTop    = y < -halfH;
+        boolean offBottom = y > worldH + halfH;
+
+        if (offLeft || offRight || offTop || offBottom) {
+            w.removeObject(this);
             return;
         }
 
-    setLocation(nextX, getY());
+        // 実際に移動
+        setLocation(nextX, y);
+        CheckOutOfBonds();
+    }
+    
+    public void CheckOutOfBonds(){
+        World w = getWorld();
+        
+     
+        
+        if(this.getX()<=0){
+            w.removeObject(this);
+        }
+}
 }
 
-}

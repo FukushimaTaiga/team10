@@ -8,6 +8,10 @@ public class MyWorld extends World {
    // ===== Game Over Flag =====
    private boolean isGameOver = false;
    
+   // ===== スポーン用タイマー =====
+    private SimpleTimer spawnTimer = new SimpleTimer();
+    private int spawnIntervalMs = 700;  // 出現間隔（ミリ秒）
+
    public MyWorld() {
        super(1200, 800, 1);
        // ====== BACKGROUND SETUP ======
@@ -26,6 +30,7 @@ public class MyWorld extends World {
        }
        updateDistanceText();
        addAsteroid();
+       spawnTimer.mark();
    }
    public void act() {
        if (isGameOver) return;
@@ -34,7 +39,11 @@ public class MyWorld extends World {
        distancePx += scrollSpeed;
        updateDistanceText();
        
-       
+       if (spawnTimer.millisElapsed() >= spawnIntervalMs) {
+            addAsteroid();
+            spawnTimer.mark();  // 次のカウント開始
+        }
+
 
    }
    private void updateDistanceText() {
@@ -84,5 +93,4 @@ public class MyWorld extends World {
         int startX = worldW + halfW;               // 右の外から入場
         addObject(a, startX, y);
     }
-
 }
