@@ -6,9 +6,9 @@ public class Laser extends Actor {
 
     public Laser() {
         // create a tall vertical laser
-        GreenfootImage img = new GreenfootImage(4, 16);
+        GreenfootImage img = new GreenfootImage(8, 32);
         img.setColor(Color.RED);
-        img.fillRect(0, 0, 4, 16);
+        img.fillRect(0, 0, 8, 32);
         setImage(img);
 
         // ensures the image faces UP
