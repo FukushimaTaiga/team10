@@ -18,19 +18,11 @@ dependency4.type=UsesDependency
 dependency5.from=UFO
 dependency5.to=asteroid
 dependency5.type=UsesDependency
-<<<<<<< HEAD
 editor.fx.0.height=739
 editor.fx.0.width=816
-editor.fx.0.x=128
-editor.fx.0.y=86
-height=1016
-=======
-editor.fx.0.height=1056
-editor.fx.0.width=1936
-editor.fx.0.x=-8
-editor.fx.0.y=-8
+editor.fx.0.x=552
+editor.fx.0.y=100
 height=985
->>>>>>> 2fde34c4f96e1bb49a7aef0639145d13c9f58d4d
 package.numDependencies=5
 package.numTargets=5
 project.charset=UTF-8
@@ -83,14 +75,7 @@ target5.width=80
 target5.x=0
 target5.y=0
 version=3.0.0
-<<<<<<< HEAD
-width=980
-world.lastInstantiated=MyWorld
-xPosition=0
-yPosition=6
-=======
 width=1936
 world.lastInstantiated=MyWorld
 xPosition=0
 yPosition=36
->>>>>>> 2fde34c4f96e1bb49a7aef0639145d13c9f58d4d
