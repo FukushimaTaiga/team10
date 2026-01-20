@@ -17,22 +17,27 @@ public class MyWorld extends World {
    private int spawnIntervalMs = 1000;   // spawn every 1000 ms (1 second)
    private int spawnOffsetRight = 300;   // spawn to the right of the screen so it slides in
 
-
+   private UFO ufo;
+   private HitJudgment hit;
    public MyWorld() {
        super(1200, 800, 1);
        // ====== BACKGROUND SETUP ======
        bgImage = new GreenfootImage("istockphoto-1403514917-612x612 (1).jpg");
        drawScrollingBackground();
        // ====== OBJECTS SETUP ======
-       addObject(new UFO(), 150, getHeight() / 2);
-
+       ufo = new UFO();
+       addObject(ufo, 150, getHeight() / 2);
+       
+       hit = new HitJudgment(ufo);
+       addObject(hit, ufo.getX(), ufo.getY());
        // Optional: seed some asteroids initially
        for (int i = 0; i < 5; i++) {
            int x = getWidth() + Greenfoot.getRandomNumber(spawnOffsetRight + 200); // slightly random
            int y = Greenfoot.getRandomNumber(getHeight());
            addObject(new asteroid(), x, y);
        }
-
+       
+       setActOrder(UFO.class, HitJudgment.class);
        // Initialize spawn timer
        lastSpawnTime = System.currentTimeMillis();
 

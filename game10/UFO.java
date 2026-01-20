@@ -53,9 +53,9 @@ public class UFO extends Actor {
         setLocation((int)x, (int)y);
         
         //collision check
-        if(isTouching(asteroid.class)){
-            ((MyWorld)getWorld()).gameOver();
-        }
+        //if(isTouching(asteroid.class)){
+        //    ((MyWorld)getWorld()).gameOver();
+        //}
     }
 
     // ------------------------------------------------------

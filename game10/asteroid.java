@@ -1,4 +1,3 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class asteroid extends Actor {   
@@ -19,9 +18,9 @@ public class asteroid extends Actor {
         // 回転
         turn(rotationSpeed);
 
-        World w = getWorld();
-        if (w == null) return;
-
+       
+        
+        int nextX = getX()- driftSpeed;
 
         // 端に触れたら消す（クランプされても発火する）
         if (nextX <= 0 ) {
@@ -34,7 +33,7 @@ public class asteroid extends Actor {
         }
 
         // 実際に移動
-        setLocation(nextX, y);
+        setLocation(nextX, getY());
         CheckOutOfBonds();
     }
     
